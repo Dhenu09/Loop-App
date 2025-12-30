@@ -1,0 +1,265 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #f0b5ae);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    padding-top: 60px;
+    
+  }
+  
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 12px auto;
+    max-width: 380px;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 60px;
+    
+  }
+  
+  .page-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .help-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .balance-tag {
+    background-color: #ffe5ec;
+    color: #f32c47;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: bolder;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 30px;
+    padding: 10px 18px;
+    display: flex;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-width: 95%;
+  }
+  
+  .bottom-nav button {
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .bottom-nav .active {
+    background: #fda196;
+    color: white;
+  }
+  
+  
+  .item-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 360px;
+    transition: transform 0.2s ease;
+    text-align: center;
+  }
+  
+  .item-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .item-card img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 180px;
+  }
+  
+  .item-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 12px 0 6px;
+  }
+  
+  .item-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+  }
+  
+  .item-card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color:  #f0382b;
+  }
+  
+  button {
+    background:  #f32c47;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  
+  .modal-box {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"] {
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  @media (max-width: 600px) {
+    .header-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .page-title {
+      font-size: 16px;
+    }
+  
+    .balance-tag {
+      font-size: 13px;
+      padding: 5px 10px;
+    }
+  
+    .item-card {
+      max-width: 92%;
+      padding: 16px;
+    }
+  
+    .bottom-nav {
+      gap: 0.5rem;
+      padding: 8px;
+    }
+  
+    button {
+      font-size: 13px;
+      padding: 8px 14px;
+    }
+  
+    .modal-box {
+      padding: 20px;
+    }
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 999;
+  }
+  
+  
+  .main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 80px 1rem 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  
